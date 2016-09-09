@@ -93,7 +93,7 @@ namespace Nestopia
 				Adapters list;
 			};
 
-			struct Device : ComInterface<IDirectSound8>
+			struct Device : ComInterface<IDirectSound>
 			{
 				explicit Device(HWND);
 
@@ -110,14 +110,14 @@ namespace Nestopia
 				Buffer();
 				~Buffer();
 
-				cstring Update(IDirectSound8&,bool,uint,uint,Channels,uint,Pool,bool);
+				cstring Update(IDirectSound&,bool,uint,uint,Channels,uint,Pool,bool);
 				void StartStream();
-				void StopStream(IDirectSound8*,bool);
+				void StopStream(IDirectSound*,bool);
 				void Release();
 
 			private:
 
-				cstring Create(IDirectSound8&,bool);
+				cstring Create(IDirectSound&,bool);
 
 				enum
 				{
@@ -125,7 +125,7 @@ namespace Nestopia
 					DC_OFFSET_16 = 0x0000
 				};
 
-				struct Com : ComInterface<IDirectSoundBuffer8>
+				struct Com : ComInterface<IDirectSoundBuffer>
 				{
 					Com();
 

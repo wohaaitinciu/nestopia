@@ -86,9 +86,9 @@ namespace Nestopia
                       << (guid ? System::Guid( *guid ).GetString() : L"unspecified")
                       << "\r\n";
 
-			ComInterface<IDirectSound8> device;
+			ComInterface<IDirectSound> device;
 
-			if (SUCCEEDED(::DirectSoundCreate8( guid, &device, NULL )))
+			if (SUCCEEDED(::DirectSoundCreate( guid, &device, NULL )))
 			{
 				static_cast<Adapters*>(context)->resize( static_cast<Adapters*>(context)->size() + 1 );
 				Adapter& adapter = static_cast<Adapters*>(context)->back();
@@ -125,8 +125,8 @@ namespace Nestopia
 
 				Destroy();
 
-				if (FAILED(::DirectSoundCreate8( &adapters.list[device.id].guid, &device, NULL )))
-					return "DirectSoundCreate8()";
+				if (FAILED(::DirectSoundCreate( &adapters.list[device.id].guid, &device, NULL )))
+					return "DirectSoundCreate()";
 
 				Io::Log() << "DirectSound: creating device #" << device.id << "\r\n";
 
@@ -184,7 +184,7 @@ namespace Nestopia
 			}
 		}
 
-		cstring DirectSound::Buffer::Create(IDirectSound8& device,const bool priority)
+		cstring DirectSound::Buffer::Create(IDirectSound& device,const bool priority)
 		{
 			Release();
 
@@ -246,7 +246,7 @@ namespace Nestopia
 				}
 			}
 
-			if (FAILED(oldCom->QueryInterface( IID_IDirectSoundBuffer8, reinterpret_cast<void**>(&com) )))
+			if (FAILED(oldCom->QueryInterface( IID_IDirectSoundBuffer, reinterpret_cast<void**>(&com) )))
 				return "IDirectSoundBuffer::QueryInterface()";
 
 			return NULL;
@@ -254,7 +254,7 @@ namespace Nestopia
 
 		cstring DirectSound::Buffer::Update
 		(
-			IDirectSound8& device,
+			IDirectSound& device,
 			const bool priority,
 			const uint rate,
 			const uint bits,
@@ -337,7 +337,7 @@ namespace Nestopia
 			}
 		}
 
-		void DirectSound::Buffer::StopStream(IDirectSound8* const device,const bool priority)
+		void DirectSound::Buffer::StopStream(IDirectSound* const device,const bool priority)
 		{
 			if (com)
 			{

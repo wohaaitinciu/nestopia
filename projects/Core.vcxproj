@@ -130,6 +130,7 @@
     <ClInclude Include="..\source\core\api\NstApiUser.hpp" />
     <ClInclude Include="..\source\core\api\NstApiVideo.hpp" />
     <ClInclude Include="..\source\core\board\NstBoard.hpp" />
+    <ClInclude Include="..\source\core\board\NstBoardAcclaimMcAcc.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardAe.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardAgci.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardAve.hpp" />
@@ -269,6 +270,7 @@
     <ClInclude Include="..\source\core\board\NstBoardMxRom.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardNamcot.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardNamcot163.hpp" />
+    <ClInclude Include="..\source\core\board\NstBoardNamcot175.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardNamcot34xx.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardNanjing.hpp" />
     <ClInclude Include="..\source\core\board\NstBoardNihon.hpp" />
@@ -423,6 +425,7 @@
     <ClInclude Include="..\source\core\NstVideoFilterNone.hpp" />
     <ClInclude Include="..\source\core\NstVideoFilterNtsc.hpp" />
     <ClInclude Include="..\source\core\NstVideoFilterScaleX.hpp" />
+    <ClInclude Include="..\source\core\NstVideoFilterxBR.hpp" />
     <ClInclude Include="..\source\core\NstVideoRenderer.hpp" />
     <ClInclude Include="..\source\core\NstVideoScreen.hpp" />
     <ClInclude Include="..\source\core\NstXml.hpp" />
@@ -452,6 +455,7 @@
     <ClCompile Include="..\source\core\api\NstApiUser.cpp" />
     <ClCompile Include="..\source\core\api\NstApiVideo.cpp" />
     <ClCompile Include="..\source\core\board\NstBoard.cpp" />
+    <ClCompile Include="..\source\core\board\NstBoardAcclaimMcAcc.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardAe.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardAgci.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardAveD1012.cpp" />
@@ -577,6 +581,7 @@
     <ClCompile Include="..\source\core\board\NstBoardMmc5.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardMmc6.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardNamcot163.cpp" />
+    <ClCompile Include="..\source\core\board\NstBoardNamcot175.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardNamcot34xx.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardNanjing.cpp" />
     <ClCompile Include="..\source\core\board\NstBoardNihon.cpp" />
@@ -709,8 +714,9 @@
     <ClCompile Include="..\source\core\NstVideoFilterHqX.cpp" />
     <ClCompile Include="..\source\core\NstVideoFilterNone.cpp" />
     <ClCompile Include="..\source\core\NstVideoFilterNtsc.cpp" />
-    <ClCompile Include="..\source\core\NstVideoFilterNtscCfg.c" />
+    <ClCompile Include="..\source\core\NstVideoFilterNtscCfg.cpp" />
     <ClCompile Include="..\source\core\NstVideoFilterScaleX.cpp" />
+    <ClCompile Include="..\source\core\NstVideoFilterxBR.cpp" />
     <ClCompile Include="..\source\core\NstVideoRenderer.cpp" />
     <ClCompile Include="..\source\core\NstVideoScreen.cpp" />
     <ClCompile Include="..\source\core\NstXml.cpp" />

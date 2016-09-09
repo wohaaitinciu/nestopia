@@ -33,7 +33,6 @@
 #include "NstWindowDialog.hpp"
 #include "NstWindowMain.hpp"
 #include "../core/api/NstApiCartridge.hpp"
-#include <Pbt.h>
 
 namespace Nestopia
 {
