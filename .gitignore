@@ -10,3 +10,10 @@
 *.js
 *.bc
 .npmignore
+
+/projects/debug
+/projects/debugout
+/projects/release
+/projects/releaseout
+
+*.sdf
