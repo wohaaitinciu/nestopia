@@ -233,6 +233,7 @@
     <ClCompile Include="..\source\win32\NstManagerSoundRecorder.cpp" />
     <ClCompile Include="..\source\win32\NstManagerTapeRecorder.cpp" />
     <ClCompile Include="..\source\win32\NstManagerVideo.cpp" />
+    <ClCompile Include="..\source\win32\NstOpenGLES.cpp" />
     <ClCompile Include="..\source\win32\NstResourceBitmap.cpp" />
     <ClCompile Include="..\source\win32\NstResourceClipboard.cpp" />
     <ClCompile Include="..\source\win32\NstResourceCursor.cpp" />
@@ -356,6 +357,7 @@
     <ClInclude Include="..\source\win32\NstObjectDelegate.hpp" />
     <ClInclude Include="..\source\win32\NstObjectHeap.hpp" />
     <ClInclude Include="..\source\win32\NstObjectPod.hpp" />
+    <ClInclude Include="..\source\win32\NstOpenGLES.hpp" />
     <ClInclude Include="..\source\win32\NstResourceBitmap.hpp" />
     <ClInclude Include="..\source\win32\NstResourceClipboard.hpp" />
     <ClInclude Include="..\source\win32\NstResourceCursor.hpp" />

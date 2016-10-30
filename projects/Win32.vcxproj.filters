@@ -421,6 +421,9 @@
       <Filter>DirectX</Filter>
     </ClCompile>
     <ClCompile Include="..\source\win32\NstMain.cpp" />
+    <ClCompile Include="..\source\win32\NstOpenGLES.cpp">
+      <Filter>DirectX</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\win32\NstApplicationConfiguration.hpp">
@@ -787,6 +790,9 @@
       <Filter>DirectX</Filter>
     </ClInclude>
     <ClInclude Include="..\source\win32\NstMain.hpp" />
+    <ClInclude Include="..\source\win32\NstOpenGLES.hpp">
+      <Filter>DirectX</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\source\win32\NstCollectionRouter.inl">

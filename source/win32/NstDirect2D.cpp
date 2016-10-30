@@ -28,6 +28,8 @@
 #include "NstDirect2D.hpp"
 #include "NstIoScreen.hpp"
 
+#if IMPLEMENT_WITH_D3D9
+
 #if NST_MSVC
 #pragma comment(lib,"d3d9")
 #pragma comment(lib,"d3dx9")
@@ -2052,3 +2054,4 @@ namespace Nestopia
 		#endif
 	}
 }
+#endif

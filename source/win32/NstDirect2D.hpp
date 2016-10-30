@@ -32,6 +32,10 @@
 #include "NstWindowRect.hpp"
 #include "NstDirectX.hpp"
 
+#define IMPLEMENT_WITH_D3D9 0
+
+#if IMPLEMENT_WITH_D3D9
+
 #ifdef NST_DEBUG
 #define D3D_DEBUG_INFO
 #endif
@@ -785,5 +789,20 @@ namespace Nestopia
 		};
 	}
 }
+
+#else
+
+#include "NstOpenGLES.hpp"
+
+namespace Nestopia {
+	namespace DirectX {
+		using namespace OpenGLES;
+	}
+	namespace OpenGLES {
+		using Direct2D = GLView;
+	}
+}
+
+#endif
 
 #endif
