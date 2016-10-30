@@ -44,11 +44,15 @@
     <OutDir>$(SolutionDir)debugout\language\</OutDir>
     <IntDir>debug\language\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>english</TargetName>
+    <TargetExt>.nlg</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)releaseout\language\</OutDir>
     <IntDir>release\language\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>english</TargetName>
+    <TargetExt>.nlg</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
