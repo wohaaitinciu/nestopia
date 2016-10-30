@@ -96,20 +96,20 @@ namespace Nes
 					::GetActiveWindow(),
 					buffer,
 					"Nestopia Debug Assertion!",
-					MB_ABORTRETRYIGNORE|MB_SETFOREGROUND|MB_TOPMOST
+					MB_ABORTRETRYIGNORE|MB_ICONHAND|MB_SETFOREGROUND|MB_TOPMOST
 				);
 
 				delete [] buffer;
 
 				if (result != IDABORT)
-					return result == IDIGNORE ? 1 : 2;
+					return result == IDIGNORE ? 1 : 0;
 
 				result = NST_MESSAGEBOX
 				(
 					::GetActiveWindow(),
 					"break into the debugger?",
 					"Nestopia Debug Assertion!",
-					MB_YESNO|MB_SETFOREGROUND|MB_TOPMOST
+					MB_YESNO|MB_ICONQUESTION|MB_SETFOREGROUND|MB_TOPMOST
 				);
 
 				if (result == IDNO)

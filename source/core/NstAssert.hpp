@@ -43,12 +43,12 @@
 
   #if NST_GCC >= 200 || NST_MWERKS >= 0x3000
    #define NST_FUNC_NAME __PRETTY_FUNCTION__
-  #elif NST_MSVC >= 1300
-   #define NST_FUNC_NAME __FUNCTION__
+  #elif NST_MSVC >= 1400
+   #define NST_FUNC_NAME __FUNCSIG__
   #elif NST_BCC >= 0x550
    #define NST_FUNC_NAME __FUNC__
   #else
-   #define NST_FUNC_NAME 0
+   #define NST_FUNC_NAME __FUNCTION__
   #endif
 
   #if NST_MSVC >= 1300
