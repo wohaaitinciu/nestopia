@@ -201,12 +201,6 @@ namespace Nestopia {
 
 		void GLView::RenderScreen(uint state) {
 			if (SUCCEEDED(lastResult)) {
-				glViewport(0, 0, screenRect.right, screenRect.bottom);
-				glMatrixMode(GL_PROJECTION);
-
-				glLoadIdentity();
-				glOrtho(0.0f, screenRect.right, 0.0f, screenRect.bottom, -1.0f, 1.0f);
-
 				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 				if (state & RENDER_PICTURE) {
@@ -395,15 +389,16 @@ namespace Nestopia {
 			const int screenCurvature,
 			const Adapter::Filter filter,
 			const bool useVidMem) {
-
-			if (screen.x != screenRect.Width() || screen.y != screenRect.Height()) {
-
-			}
-
 			NST_ASSERT(picture.Width() > 0 && picture.Height() > 0 && clipping.Width() > 0 && clipping.Height() > 0);
 
 			pictureRect = picture;
 			screenSize = screen;
+
+			glViewport(0, 0, pictureRect.right, pictureRect.bottom);
+			glMatrixMode(GL_PROJECTION);
+
+			glLoadIdentity();
+			glOrtho(0.0f, pictureRect.right, 0.0f, pictureRect.bottom, -1.0f, 1.0f);
 
 			if (texture == 0) {
 				glPixelStorei(GL_UNPACK_ALIGNMENT, 2);
