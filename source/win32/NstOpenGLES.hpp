@@ -155,6 +155,7 @@ namespace Nestopia {
 
 			HRESULT DeviceResetWindowClient(const Point& client, HRESULT hResult);
 			HRESULT DeviceReset();
+			HRESULT DeviceRepair(const HRESULT lastError);
 
 			LRESULT ToggleDialogBoxMode();
 
@@ -176,7 +177,7 @@ namespace Nestopia {
 
 			uint GetBitsPerPixel() const;
 			void GetBitMask(ulong& r, ulong& g, ulong& b) const;
-			const Rect& GetScreenRect() const { return screenRect; }
+			const Rect& GetScreenRect() const { return pictureRect; }
 
 			bool LockScreen(void*& data, long& pitch);
 			void UnlockScreen() const;
