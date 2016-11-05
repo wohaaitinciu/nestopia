@@ -129,9 +129,10 @@ namespace Nestopia {
 		private:
 			const Adapters adapters;
 
+			Rect pictureRect;
 			Point screenSize;
+
 			bool windowed;
-			Rect screenRect;
 			bool dialogBoxMode;
 
 			HWND hDeviceWindow;
@@ -152,7 +153,8 @@ namespace Nestopia {
 		private:
 			static Adapters EnumerateAdapters();
 
-			HRESULT GLView::ResetWindowClient(const Point& client, HRESULT hResult);
+			HRESULT DeviceResetWindowClient(const Point& client, HRESULT hResult);
+			HRESULT DeviceReset();
 
 			LRESULT ToggleDialogBoxMode();
 

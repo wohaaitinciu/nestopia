@@ -239,8 +239,8 @@ namespace Nestopia {
 				1.0f, 0.0f
 			};
 
-			const GLfloat width0 = (GLfloat)screenRect.right;
-			const GLfloat height0 = (GLfloat)screenRect.bottom;
+			const GLfloat width0 = (GLfloat)pictureRect.right;
+			const GLfloat height0 = (GLfloat)pictureRect.bottom;
 
 			GLfloat vertices[] = {
 				0.0f, 0.0f,
@@ -320,12 +320,12 @@ namespace Nestopia {
 				dialogBoxMode = true;
 			}
 
-			return S_OK;//device.Reset();
+			return DeviceReset();
 		}
 
 		bool GLView::Reset() {
 			if (FAILED(lastResult) && lastResult != INVALID_RECT) {
-				lastResult = S_OK;//device.Repair(lastResult);
+				lastResult = DeviceRepair(lastResult);
 			}
 
 			return SUCCEEDED(lastResult);
@@ -339,7 +339,7 @@ namespace Nestopia {
 				NST_ASSERT(client.x >= picture.x && client.y >= picture.y);
 
 				if (lastResult == INVALID_RECT) {
-					lastResult = ResetWindowClient(client, lastResult);
+					lastResult = DeviceResetWindowClient(client, lastResult);
 				}
 			}
 			else {
@@ -363,7 +363,7 @@ namespace Nestopia {
 				NST_ASSERT(client.x >= picture.x && client.y >= picture.y);
 
 				if (lastResult == INVALID_RECT) {
-					lastResult = ResetWindowClient(client, lastResult);
+					lastResult = DeviceResetWindowClient(client, lastResult);
 				}
 			}
 			else {
@@ -402,7 +402,7 @@ namespace Nestopia {
 
 			NST_ASSERT(picture.Width() > 0 && picture.Height() > 0 && clipping.Width() > 0 && clipping.Height() > 0);
 
-			screenRect = picture;
+			pictureRect = picture;
 			screenSize = screen;
 
 			if (texture == 0) {
@@ -428,16 +428,22 @@ namespace Nestopia {
 			}
 		}
 
-		HRESULT GLView::ResetWindowClient(const Point& client, HRESULT hResult) {
-			NST_ASSERT(client.x > 0 && client.y > 0);
-
-			//glViewport(0, 0, client.x, client.y);
+		HRESULT GLView::DeviceResetWindowClient(const Point& client, HRESULT hResult) {
+			NST_ASSERT(windowed && client.x > 0 && client.y > 0);
 
 			if (SUCCEEDED(hResult) || hResult == INVALID_RECT) {
-				hResult = S_OK; //device.Reset();
+				hResult = DeviceReset();
 			}
 
 			return hResult;
+		}
+
+		HRESULT GLView::DeviceReset() {
+			return S_OK;
+		}
+
+		HRESULT GLView::DeviceRepair(const HRESULT lastError) {
+			return S_OK;
 		}
 
 		GLView::ScreenShotResult GLView::SaveScreenShot(wcstring const file, const uint ext) const {
